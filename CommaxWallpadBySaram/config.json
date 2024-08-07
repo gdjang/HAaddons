@@ -1,5 +1,5 @@
 {
-  "name": "COMMAX Wallpad by gdjang (origin Saram's Repository)",
+  "name": "COMMAX Wallpad by GDJANG (origin Saram's Repository)",
   "version": "1.0.1",
   "slug": "cwbs",
   "url": "https://github.com/gdjang/HAaddons",
@@ -14,7 +14,7 @@
     "DEBUG": false,
     "mqtt_log": true,
     "elfin_log": false,
-    "mqtt_server": "192.168.x.x",
+    "mqtt_server": "core-mosquitto",
     "mqtt_id": "id",
     "mqtt_password": "password",
     "mqtt_TOPIC": "ew11",
