@@ -1,8 +1,8 @@
 {
-  "name": "COMMAX Wallpad by Saram",
+  "name": "COMMAX Wallpad by gdjang (origin Saram's Repository)",
   "version": "1.0.1",
   "slug": "cwbs",
-  "url": "https://github.com/kimtc99/HAaddons",
+  "url": "https://github.com/gdjang/HAaddons",
   "description": "mqtt 통신을 활용한 코맥스 월패드 컨트롤러",
   "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
   "map": [
@@ -17,7 +17,7 @@
     "mqtt_server": "192.168.x.x",
     "mqtt_id": "id",
     "mqtt_password": "password",
-    "mqtt_TOPIC": "cwbs",
+    "mqtt_TOPIC": "ew11",
     "elfin_server": "192.168.x.x",
     "elfin_id": "admin",
     "elfin_password": "elfin_password"
