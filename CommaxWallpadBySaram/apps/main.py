@@ -511,17 +511,18 @@ def do_work(config, device_list):
                             log('[SIGNAL] 신호 전송: {}'.format(send_data))
                         mqtt_client.publish(ELFIN_TOPIC + '/send', bytes.fromhex(send_data['sendcmd']))
                         # await asyncio.sleep(0.01)
-                        if send_data['count'] < 5:
+                        # if send_data['count'] < 5:
+                        if send_data['count'] < 50:
                             send_data['count'] = send_data['count'] + 1
-                            QUEUE.append(send_data)
+                            # QUEUE.append(send_data)
+                            QUEUE.insert(0,send_data)
                         else:
                             if elfin_log:
                                 log('[SIGNAL] Send over 5 times. Send Failure. Delete a queue: {}'.format(send_data))
             except Exception as err:
                 log('[ERROR] send_to_elfin(): {}'.format(err))
                 return True
-            # await asyncio.sleep(0.01)
-            await asyncio.sleep(0.05)
+            await asyncio.sleep(0.01)            
 
     mqtt_client.username_pw_set(config['mqtt_id'], config['mqtt_password'])
     mqtt_client.on_connect = on_connect
