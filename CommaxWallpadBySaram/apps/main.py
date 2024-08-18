@@ -514,8 +514,8 @@ def do_work(config, device_list):
                         # if send_data['count'] < 5:
                         if send_data['count'] < 300:
                             send_data['count'] = send_data['count'] + 1
-                            # QUEUE.append(send_data)
-                            QUEUE.insert(0,send_data)
+                            QUEUE.append(send_data)
+                            # QUEUE.insert(0,send_data)
                         else:
                             if elfin_log:
                                 log('[SIGNAL] Send over 300 times. Send Failure. Delete a queue: {}'.format(send_data))
