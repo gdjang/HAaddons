@@ -512,7 +512,7 @@ def do_work(config, device_list):
                         mqtt_client.publish(ELFIN_TOPIC + '/send', bytes.fromhex(send_data['sendcmd']))
                         # await asyncio.sleep(0.01)
                         # if send_data['count'] < 5:
-                        if send_data['count'] < 100:
+                        if send_data['count'] < 300:
                             send_data['count'] = send_data['count'] + 1
                             # QUEUE.append(send_data)
                             QUEUE.insert(0,send_data)
@@ -523,7 +523,7 @@ def do_work(config, device_list):
                 log('[ERROR] send_to_elfin(): {}'.format(err))
                 return True
             # await asyncio.sleep(0.01)
-            await asyncio.sleep(0.02)
+            await asyncio.sleep(0.01)
 
     mqtt_client.username_pw_set(config['mqtt_id'], config['mqtt_password'])
     mqtt_client.on_connect = on_connect
