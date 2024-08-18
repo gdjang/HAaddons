@@ -1,10 +1,15 @@
 수정 사항 Changelog
 ==================
 
+V 1.0.6
+-------
+1. 재전송 횟수 50회에서 100회로 변경
+2. QUEUE.append를 QUEUE.insert로 변경
+
 V 1.0.5
 -------
 1. Sleep Time 0.01에서 0.02로 변경
-3. QUEUE.insert를 QUEUE.append로 변경
+2. QUEUE.insert를 QUEUE.append로 변경
 
 V 1.0.4
 -------
