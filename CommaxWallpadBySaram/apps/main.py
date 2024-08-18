@@ -512,10 +512,12 @@ def do_work(config, device_list):
                         mqtt_client.publish(ELFIN_TOPIC + '/send', bytes.fromhex(send_data['sendcmd']))
                         # await asyncio.sleep(0.01)
                         # if send_data['count'] < 5:
-                        if send_data['count'] < 100:
+                        if send_data['sendcmd'] == 'A0010100081500BF' and send_data['count'] > 10 : #엘베호출은 10번만.
+                            if elfin_log:
+                                log('[SIGNAL] Send EV Call over 10 times. Send Failure. Delete a queue: {}'.format(send_data))
+                        elif send_data['count'] < 100:
                             send_data['count'] = send_data['count'] + 1
                             QUEUE.append(send_data)
-                            # QUEUE.insert(0,send_data)
                         else:
                             if elfin_log:
                                 log('[SIGNAL] Send over 100 times. Send Failure. Delete a queue: {}'.format(send_data))
