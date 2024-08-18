@@ -522,8 +522,7 @@ def do_work(config, device_list):
             except Exception as err:
                 log('[ERROR] send_to_elfin(): {}'.format(err))
                 return True
-            # await asyncio.sleep(0.01)
-            await asyncio.sleep(0.01)
+            await asyncio.sleep(0.01)            
 
     mqtt_client.username_pw_set(config['mqtt_id'], config['mqtt_password'])
     mqtt_client.on_connect = on_connect
